@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz App - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+  <!-- Top Left Buttons -->
+  <div class="top-left">
+    <button class="home-btn" onclick="showLeaderboard()">🏆 Leaderboard</button>
+    <button class="home-btn" onclick="showCoins()">💰 Coins</button>
+</div>
+
+  <!-- Bottom Left Buttons -->
+  <div class="bottom-left">
+    <button class="home-btn" onclick="showSettings()">⚙️ Settings</button>
+    <button class="home-btn" onclick="showProfile()">👤 My Profile</button>
+  </div>
+
+  <!-- Center Buttons -->
+<div class="center-buttons">
+    <button class="main-btn" onclick="openCreateRoomPopup()">🎮 Create Room</button>
+    <button class="main-btn" onclick="openJoinRoomPopup()">🔗 Join Room</button>
+  </div>
+  
+  <!-- Top Right Button -->
+  <div class="top-right">
+    <button class="home-btn" onclick="signOut()">🚪 Sign Out</button>
+  </div>
+  <div id="createRoomPopup" class="popup hidden">
+    <div class="popup-content">
+      <h3>🎮 Create Room</h3>
+      <input type="text" id="createRoomInput" placeholder="Room Code (optional)">
+      <div class="popup-buttons">
+        <button onclick="submitCreateRoom()">Create</button>
+        <button onclick="closePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="joinRoomPopup" class="popup hidden">
+    <div class="popup-content">
+      <h3>🔗 Enter Room Code</h3>
+      <input type="text" id="roomCodeInput" placeholder="Room Code">
+      <div class="popup-buttons">
+        <button onclick="submitRoomCode()">Join</button>
+        <button onclick="closePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+ 
+  <div id="leaderboardPopup" class="popup hidden">
+    <div class="popup-content">
+      <h3>🏆 Leaderboard</h3>
+      <ul id="leaderboardList"></ul>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  <div id="coinsPopup" class="popup hidden coins-popup">
+    <div class="popup-content">
+      <h3>💰 Your Coins</h3>
+      <p id="coinCount">Coins: 0</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  <!-- My Profile Popup -->
+<div id="profilePopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>👤 My Profile</h2>
+      <p><strong>Username:</strong> <span id="profileName"></span></p>
+      <p><strong>High Score:</strong> <span id="profileScore"></span></p>
+      <p><strong>Coins:</strong> <span id="profileCoins"></span></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  <!-- settings popup -->
+  <div id="settingsPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>⚙️ Settings</h2>
+      <label>
+        <input type="checkbox" id="soundToggle" checked>
+        Enable Sound
+      </label>
+      <label>
+        <input type="checkbox" id="darkModeToggle">
+        Dark Mode
+      </label>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
